@@ -21,8 +21,8 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js",
-    "start-limited": "node --max-old-space-size=4096 index.js"
+    "start": "node polaris.js",
+    "start-limited": "node --max-old-space-size=4096 polaris.js"
   },
   "author": "",
   "license": "ISC",
