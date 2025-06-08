@@ -1,11 +1,19 @@
 const Discord = require("discord.js")
 require('dotenv').config();
+const http = require('http')
 
 const token = process.env.DISCORD_TOKEN
 if (!token) return console.log("No Discord token provided! Put one in your .env file")
 
 const Shard = new Discord.ShardingManager('./index.js', { token } );
 const guildsPerShard = 2000
+
+http.createServer((req, res) => {
+  res.writeHead(200);
+  res.end('Peelyris is running!');
+}).listen(8301, '0.0.0.0', () => {
+  console.log('Health check server running on port 8301');
+});
 
 Discord.fetchRecommendedShardCount(token, {guildsPerShard}).then(shards => {
     let shardCount = Math.floor(shards)
