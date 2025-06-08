@@ -30,7 +30,7 @@ app.set('json spaces', 2)
 
 require('express-async-errors') // why is this NEEDED (actually malding)
 
-const siteURL = tools.WEBSITE
+const siteURL = "https://peely.sot-tracker.com"
 
 // discord endpoints
 const discordAPI = "https://discord.com/api/v9/"
