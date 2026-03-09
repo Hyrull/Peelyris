@@ -57,7 +57,7 @@ client.updateStatus = function() {
 }
 
 // when online
-client.on("ready", () => {
+client.on("clientReady", () => {
     if (client.shard.id == client.shard.count - 1) console.log(`Bot online! (${+process.uptime().toFixed(2)} secs)`)
     client.startupTime = Date.now() - startTime
     client.version = version
