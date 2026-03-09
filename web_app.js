@@ -30,7 +30,7 @@ app.set('json spaces', 2)
 
 require('express-async-errors') // why is this NEEDED (actually malding)
 
-const siteURL = "https://peely.sot-tracker.com"
+const siteURL = "https://peely.hyrul.dev"
 
 // discord endpoints
 const discordAPI = "https://discord.com/api/v9/"
@@ -119,7 +119,6 @@ app.get("/invite/:id?", (req, res) => {
 app.get("/api/loggedin", async function(req, res) {
     let botPublic = await botIsPublic()
     let info = await getDiscordInfo(req, true)
-    console.log(info)
     return res.send({ login: info ? { id: info.id, username: info.username } : null, botPublic })
 })
 
